@@ -8,6 +8,9 @@ on:
 jobs:
   infrastructure-terraform:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: terraform
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -18,22 +21,18 @@ jobs:
       - name: Terraform fmt
         id: fmt
         run: terraform fmt -check
-        working-directory: terraform
       - name: Terraform Init
         id: init
-        run: terraform init
-        working-directory: terraform
+        run: terraform init -no-color
       - name: Terraform Validate
         id: validate
         run: terraform validate -no-color
       - name: Terraform Plan
         id: plan
         run: terraform plan -no-color
-        working-directory: terraform
       - name: Terraform Apply
         id: apply
         run: terraform apply -auto-approve
-        working-directory: terraform
         env:
           VULTR_API_KEY: ${{ secrets.VULTR_API_KEY }}
 
