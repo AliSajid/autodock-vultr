@@ -8,7 +8,7 @@ resource "vultr_dns_domain" "cdrlut" {
 
 resource "vultr_dns_record" "bastion_ip_record" {
   domain = vultr_dns_domain.cdrlprojects.id
-  name   = "bastion"
+  name   = "autodock"
   data   = vultr_instance.bastion.main_ip
   type   = "A"
 }
