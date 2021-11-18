@@ -1,0 +1,4 @@
+---
+- name: Empty Task
+  ansible.builtin.debug:
+    msg: Hello from the MGLTools role

@@ -1,0 +1,14 @@
+---
+- name: Prepare baseline setup
+  hosts: autodock.cdrlprojects.org
+  remote_user: centos
+  become: yes
+
+  roles:
+    - role: common
+      state: present
+    - role: autodock
+      state: present
+    - role: mgltools
+      state: present
+
