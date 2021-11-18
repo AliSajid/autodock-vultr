@@ -35,6 +35,16 @@ jobs:
         run: terraform apply -auto-approve
         env:
           VULTR_API_KEY: ${{ secrets.VULTR_API_KEY }}
+  configuration_ansible:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ansible
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Run Ansible
+        uses: ansible-playbook site.yml
 
 
 
