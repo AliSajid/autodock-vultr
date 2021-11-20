@@ -1,0 +1,16 @@
+#cloud-config
+system_info:
+  default_user:
+    name: vultr
+disable_root: true
+ssh_pwauth: no
+users:
+  - name: vultr
+    primary_group: vultr
+    groups: 
+      - wheel
+      - users
+    selinux_user: staff_u
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    ssh_authorized_keys:
+      - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBXqK7bqC3DUHLax2mIxpxVNgwDACySartlU8+VWh9g5FSUBDlNNFTfwXIeYhVQObsJ/ZjDt9zR/j8faMoYprtg= asimami-vultr-secretive@secretive.IAmGroot.local

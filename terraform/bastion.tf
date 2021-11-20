@@ -7,4 +7,5 @@ resource "vultr_instance" "autodock" {
   hostname         = "autodock.cdrlprojects.org"
   activation_email = false
   ssh_key_ids      = [vultr_ssh_key.asimami_vultr_key.id]
+  user_data        = file("${path.module}/user-data.yml")
 }
