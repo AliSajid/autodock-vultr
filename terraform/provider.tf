@@ -4,6 +4,10 @@ terraform {
       source  = "vultr/vultr"
       version = "2.5.0"
     }
+    aws = {
+      source  = "hashicorp/aws"
+      version = "3.67.0"
+    }
   }
 }
 
