@@ -1,7 +1,7 @@
 ---
 - name: Prepare baseline setup
-  hosts: autodock.cdrlprojects.org
-  remote_user: centos
+  hosts: autodock.cdrl-ut.org
+  remote_user: vultr
   become: yes
 
   roles:

@@ -1,0 +1,10 @@
+ControlMaster auto
+ControlPersist 10m
+
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityAgent /Users/asimami/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
+  IdentitiesOnly yes
+  User vultr
+  IdentityFile ~/.ssh/asimami-vultr-secretive.pub
